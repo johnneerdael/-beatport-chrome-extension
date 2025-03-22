@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beatport Downloader</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="header">
+      <h2>Beatport Downloader</h2>
+      <div class="service-status" id="serviceStatus">
+        <span class="status-indicator"></span>
+        <span class="status-text">Checking...</span>
+      </div>
+    </div>
+    <div class="settings">
+      <div class="settings-row">
+        <label for="serviceHost">Service Host:</label>
+        <input type="text" id="serviceHost" value="localhost">
+      </div>
+      <div class="settings-row">
+        <label for="servicePort">Service Port:</label>
+        <input type="number" id="servicePort" value="1337">
+      </div>
+      <div class="settings-row">
+        <label for="notifications">Notifications:</label>
+        <input type="checkbox" id="notifications" checked>
+      </div>
+      <div class="settings-actions">
+        <button id="refreshBtn">Refresh Status</button>
+        <button id="saveSettingsBtn">Save Settings</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

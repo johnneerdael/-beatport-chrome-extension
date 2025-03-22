@@ -1,0 +1,185 @@
+.__variable_a8b512 {
+    --font-aeonik: "__aeonikFont_a8b512", "__aeonikFont_Fallback_a8b512";
+}
+body {
+    margin: 0;
+    line-height: inherit;
+    padding: 0;
+    font-family: var(--font-aeonik), -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    color: #fff;
+    background: #262626;
+}
+*, :after, :before {
+    box-sizing: border-box;
+    border: 0 solid;
+}
+
+/**
+ * Beatport Downloader - Content Style
+ * 
+ * This stylesheet is injected into Beatport pages
+ */
+
+/* Download Button Styles */
+.bpd-download-button {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.bpd-btn {
+  background: #1863ff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 6px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  transition: background-color 0.2s;
+}
+
+.bpd-btn:hover {
+  background: #0046cc;
+}
+
+.bpd-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.bpd-progress {
+  width: 100px;
+  height: 4px;
+  background: #eee;
+  margin-left: 8px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.bpd-progress-bar {
+  height: 100%;
+  background: #1863ff;
+  width: 0%;
+  transition: width 0.3s;
+}
+
+/* Button states */
+.bpd-service-unavailable .bpd-btn {
+  background: #999;
+  cursor: not-allowed;
+}
+
+.bpd-complete .bpd-btn {
+  background: #28a745;
+  background: #28a745;
+}
+
+.bpd-error .bpd-btn {
+  background: #dc3545;
+}
+
+/* Error Popup Styles */
+.bp-error-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.bp-error-popup-content {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.bp-error-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #333;
+}
+
+.bp-error-popup-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #ff3b30;
+}
+
+.bp-error-popup-close {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 0.8;
+}
+
+.bp-error-popup-close:hover {
+  color: #fff;
+}
+
+.bp-error-popup-body {
+  padding: 16px;
+  color: #eee;
+}
+
+.bp-error-popup-footer {
+  padding: 12px 16px;
+  text-align: right;
+  border-top: 1px solid #333;
+}
+
+.bp-error-popup-ok {
+  background-color: #1863ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.bp-error-popup-ok:hover {
+  background-color: #0046cc;
+}
+
+/* Spinner Animation */
+.bp-spinner {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #0097ff;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  animation: bp-spin 1s linear infinite;
+}
+
+@keyframes bp-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .bpd-progress {
+    background: #444;
+  }
+}

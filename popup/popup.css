@@ -1,0 +1,258 @@
+/**
+ * Beatport Downloader - Popup Styles
+ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #f5f5f5;
+  width: 320px;
+  margin: 0;
+  padding: 0;
+}
+
+.popup-container {
+  padding: 12px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1863ff;
+}
+
+.service-status {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.status-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 4px;
+  background-color: #999;
+}
+
+.status-connected .status-indicator {
+  background-color: #28a745;
+}
+
+.status-connecting .status-indicator {
+  background-color: #ffc107;
+  animation: pulse 1.5s infinite;
+}
+
+.status-disconnected .status-indicator {
+  background-color: #dc3545;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.download-queue {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.download-queue h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.queue-empty {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  padding: 8px;
+}
+
+.queue-item {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.queue-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.queue-item-title {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.queue-item-status {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  background-color: #eee;
+}
+
+.status-queued {
+  background-color: #f8f9fa;
+  color: #495057;
+}
+
+.status-downloading {
+  background-color: #e3f2fd;
+  color: #0d6efd;
+}
+
+.status-completed {
+  background-color: #d4edda;
+  color: #198754;
+}
+
+.status-failed {
+  background-color: #f8d7da;
+  color: #dc3545;
+}
+
+.queue-item-artist {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.queue-item-progress {
+  height: 4px;
+  background-color: #eee;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.queue-item-progress-bar {
+  height: 100%;
+  background-color: #1863ff;
+  width: 0%;
+  transition: width 0.3s;
+}
+
+.settings h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.settings-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.settings-row label {
+  flex: 0 0 40%;
+}
+
+.settings-row input[type="text"],
+.settings-row input[type="number"],
+.settings-row select {
+  flex: 0 0 55%;
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.settings-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+button {
+  background-color: #1863ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #0046cc;
+}
+
+button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #e1e1e1;
+    background-color: #222;
+  }
+  
+  .header {
+    border-bottom-color: #444;
+  }
+  
+  .download-queue {
+    border-bottom-color: #444;
+  }
+  
+  .queue-empty {
+    color: #999;
+  }
+  
+  .queue-item {
+    background-color: #333;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+  
+  .queue-item-artist {
+    color: #999;
+  }
+  
+  .queue-item-progress {
+    background-color: #444;
+  }
+  
+  .status-queued {
+    background-color: #343a40;
+    color: #dee2e6;
+  }
+  
+  .settings-row input[type="text"],
+  .settings-row input[type="number"],
+  .settings-row select {
+    background-color: #333;
+    border-color: #555;
+    color: #e1e1e1;
+  }
+}
